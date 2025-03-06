@@ -5,12 +5,12 @@ import android.telephony.SmsManager
 import android.util.Log
 
 object AutoResponder {
-
     fun sendAutoReply(context: Context, phoneNumber: String?, message: String) {
         if (phoneNumber.isNullOrEmpty()) return
 
         try {
             val smsManager = SmsManager.getDefault()
+            Log.d("AutoResponder", "Enviando SMS a $phoneNumber con el mensaje: $message")
             smsManager.sendTextMessage(phoneNumber, null, message, null, null)
             Log.d("AutoResponder", "SMS enviado a $phoneNumber")
         } catch (e: Exception) {

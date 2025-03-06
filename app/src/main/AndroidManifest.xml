@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
 
     <application
         android:allowBackup="true"
@@ -21,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Llamadas"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,10 +28,19 @@
             android:theme="@style/Theme.Llamadas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Aquí registramos el BroadcastReceiver para llamadas -->
+        <receiver
+            android:name=".pantallas.CallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
