@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+
 
     <application
         android:allowBackup="true"
@@ -33,13 +35,13 @@
         </activity>
 
         <!-- Aquí registramos el BroadcastReceiver para llamadas -->
-        <receiver
-            android:name=".pantallas.CallReceiver"
+        <receiver android:name=".CallReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
+
 
     </application>
 

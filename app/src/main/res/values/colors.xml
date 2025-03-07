@@ -6,9 +6,11 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="buttonBackground">#2196F3</color>
 
-    <color name="primary_color">#6200EE</color> <!-- Color de tu elección -->
-    <color name="primary_dark_color">#3700B3</color> <!-- Color oscuro -->
-    <color name="accent_color">#03DAC5</color> <!-- Color de acento -->
+
+    <color name="primary_color">#673AB7</color> <!-- Color de tu elección -->
+    <color name="primary_dark_color">#FF5722</color> <!-- Color oscuro -->
+    <color name="accent_color">#FF5722</color> <!-- Color de acento -->
 </resources>
