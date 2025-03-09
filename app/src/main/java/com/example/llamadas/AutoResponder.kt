@@ -11,18 +11,14 @@ object AutoResponder {
     fun sendAutoReply(context: Context, phoneNumber: String?, message: String) {
         if (phoneNumber.isNullOrEmpty()) return
 
-        // Verificar si el permiso de enviar SMS está concedido
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.SEND_SMS)
             != PackageManager.PERMISSION_GRANTED) {
-            Log.e("AutoResponder", "Permiso de SMS no concedido")
-            return
+            return // No se necesita log aquí, ya que la app no puede hacer nada sin permiso
         }
 
         try {
             val smsManager = SmsManager.getDefault()
-            Log.d("AutoResponder", "Enviando SMS a $phoneNumber con el mensaje: $message")
             smsManager.sendTextMessage(phoneNumber, null, message, null, null)
-            Log.d("AutoResponder", "SMS enviado a $phoneNumber")
         } catch (e: Exception) {
             Log.e("AutoResponder", "Error al enviar SMS: ${e.message}")
         }
